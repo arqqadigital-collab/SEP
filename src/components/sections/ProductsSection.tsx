@@ -1,44 +1,86 @@
-import React from "react";
-import SlideNavButtons from "@/components/ui/SlideNavButtons";
-import { useSlider } from "@/hooks/useSlider";
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { products } from "@/data/content";
 
 const ProductsSection: React.FC = () => {
-  const { current, next, prev } = useSlider(products.length);
-  const activeProduct = products[current];
-  const nextProduct = products[(current + 1) % products.length];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  const activeProduct = products[currentSlide];
+  const nextProduct = products[(currentSlide + 1) % products.length];
+
+  const nextSlide = () => {
+    if (isFading) return;
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev + 1) % products.length);
+      setIsFading(false);
+    }, 300);
+  };
+
+  const prevSlide = () => {
+    if (isFading) return;
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentSlide((prev) => (prev - 1 + products.length) % products.length);
+      setIsFading(false);
+    }, 300);
+  };
 
   return (
-    <section className="pt-24 md:pt-32 pb-24 relative bg-white z-30 rounded-t-[2.5rem] md:rounded-t-[4rem] -mt-8 md:-mt-12">
-      <div className="text-center mb-16 px-6 relative z-30">
-        <h2 className="text-3xl font-bold mb-4 text-[#582C83]">Our Products</h2>
+    <section className="py-24 relative bg-white z-10">
+      <div className="text-center mb-12 px-6">
+        <h2 className="text-3xl font-bold mb-4 text-[#0c468b]">Our Products</h2>
         <p className="text-gray-700 max-w-2xl mx-auto">
           Discover our comprehensive range of high-quality products designed to meet the rigorous demands of industrial and utility sectors.
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-[1fr_2fr_1fr] gap-8 items-center min-h-[500px] relative z-30">
-        <div key={`info-${current}`} className="space-y-6 fade-in animate-in slide-in-from-left-4 duration-500">
-          <h3 className="text-2xl font-bold text-[#582C83]">{activeProduct.title}</h3>
-          <p className="text-gray-800 text-sm leading-relaxed">{activeProduct.description}</p>
-          <button className="px-6 py-2 border border-[#582C83] text-[#582C83] hover:bg-[#582C83] hover:text-white transition-colors rounded-sm uppercase tracking-wider text-xs font-semibold">
-            Read More
-          </button>
-          <SlideNavButtons onPrev={prev} onNext={next} variant="purple" className="pt-4" />
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-[1fr_2fr_1fr] gap-8 items-center min-h-[500px]">
+        {/* Active Product Info */}
+        <div className="flex flex-col gap-6">
+          <div className={`space-y-2 transition-all duration-300 ease-in-out ${isFading ? 'opacity-0 -translate-x-4' : 'opacity-100 translate-x-0'}`}>
+            <h3 className="text-2xl font-bold text-[#0c468b]">{activeProduct.title}</h3>
+            <p className="text-gray-800 text-sm leading-relaxed line-clamp-2">
+              {activeProduct.description}
+            </p>
+          </div>
+          <div className={`transition-all duration-300 ease-in-out delay-75 ${isFading ? 'opacity-0 -translate-x-4' : 'opacity-100 translate-x-0'}`}>
+            <button className="px-8 py-3 border border-[#0c468b] text-[#0c468b] hover:bg-[#0c468b] hover:text-white transition-colors rounded-lg uppercase tracking-wider text-sm font-semibold">
+              Read More
+            </button>
+          </div>
+          <div className="flex gap-4 pt-2">
+            <button
+              onClick={prevSlide}
+              disabled={isFading}
+              className="w-10 h-10 rounded-full border border-gray-300 text-[#0c468b] flex items-center justify-center hover:bg-[#0c468b] hover:text-white hover:border-[#0c468b] transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextSlide}
+              disabled={isFading}
+              className="w-10 h-10 rounded-full border border-gray-300 text-[#0c468b] flex items-center justify-center hover:bg-[#0c468b] hover:text-white hover:border-[#0c468b] transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
         </div>
 
+        {/* Center Image */}
         <div className="relative flex justify-center w-full">
           <img
-            key={`img-${current}`}
             src={activeProduct.image}
             alt={activeProduct.title}
-            className="relative z-10 rounded-xl shadow-2xl w-full h-[400px] lg:h-[500px] object-cover object-center border border-gray-200 animate-in fade-in zoom-in-95 duration-500"
+            className={`relative z-10 rounded-xl shadow-2xl w-full aspect-[4/3] object-cover object-center border border-gray-200 transition-all duration-300 ease-in-out ${isFading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
           />
         </div>
 
-        <div key={`preview-${current}`} className="hidden md:block opacity-50 space-y-4 pl-8 border-l border-gray-300 animate-in slide-in-from-right-4 duration-500">
-          <h3 className="text-xl font-semibold text-[#582C83]">{nextProduct.title}</h3>
-          <p className="text-sm line-clamp-3 text-gray-700">{nextProduct.description}</p>
+        {/* Next Product Preview */}
+        <div className={`hidden md:block opacity-50 space-y-2 pl-8 border-l border-gray-300 transition-all duration-300 ease-in-out ${isFading ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'}`}>
+          <h3 className="text-xl font-semibold text-[#0c468b]">{nextProduct.title}</h3>
+          <p className="text-sm line-clamp-2 text-gray-700">{nextProduct.description}</p>
         </div>
       </div>
     </section>

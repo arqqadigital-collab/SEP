@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => (
         We are building the infrastructure to power the future of your enterprise.
       </p>
 
-      <button className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-[#0c468b] transition-colors rounded-sm uppercase tracking-wider text-sm font-semibold mb-12">
+      <button className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-[#0c468b] transition-colors rounded-lg uppercase tracking-wider text-sm font-semibold mb-12">
         Learn More
       </button>
 

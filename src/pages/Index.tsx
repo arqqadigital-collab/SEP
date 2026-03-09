@@ -13,14 +13,14 @@ import CtaSection from "@/components/sections/CtaSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans overflow-x-hidden selection:bg-[#582C83] selection:text-white">
+    <div className="min-h-screen bg-white text-gray-800 font-sans overflow-x-hidden selection:bg-[#0c468b] selection:text-white">
       <Navbar />
       <HeroSection />
-      <StatsSection />
+      <ProjectsSection />
       <WhoWeAreSection />
       <ProductsSection />
       <ServicesSection />
-      <ProjectsSection />
+      <StatsSection />
       <ClientsSection />
       <LocationsSection />
       <CtaSection />
