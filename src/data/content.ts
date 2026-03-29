@@ -38,22 +38,37 @@ export const products: ProductItem[] = [
   {
     title: "Protection Relay & Control Panels",
     description: "We are approved local manufacturer for Protection Relay and Control Panels up to",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771841039/freepik__recreate-this-image-in-high-resolution__95930_lxb6cl.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774788943/freepik_0001_5_krwzzr.png",
   },
   {
     title: "Smart Metering Solutions",
     description: "We offer complete Automatic Metering Infrastructure (AMI) Solution based on various meters and technology for Infrastructure, Industrial, Utility and Oil & Gas market segments.",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771841184/smart-metering_vniwm0.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774788853/freepik_0001_4_nbcav6.png",
   },
   {
     title: "Automation Solutions",
     description: "We offer complete Substation Automation Solution based on various equipment, technology with our partner COPA-DATA, Schneider Electric, ETAP and others for Power Utility.",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771841226/automation-solutions_i9vs3d.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787180/freepik_photo-a-large-electrical-control-panel-with-many-buttons-switches-and-digital-displays-with-a-server-rack-in-the-background-inside-a-room-with-wooden-floors_0001_pbtiir.png",
   },
   {
     title: "LV Power Distribution",
     description: "We provide a wide range of Low Voltage Power Distribution Solutions which are type tested to latest industry standard IEC- 61439 and suitable for infrastructure applications.",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771841236/power-_msyxv1.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787805/freepik_0001_3_ghc3s8.png",
+  },
+  {
+    title: "Prefabricated Substation",
+    description: "Complete prefabricated substation solutions designed for rapid deployment, safety, and maximum reliability in diverse environments.",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787742/freepik_0001_2_blfsra.png",
+  },
+  {
+    title: "Empty Enclosure & Control Desk",
+    description: "High-quality empty enclosures and customized control desks designed to meet stringent industrial standards for various applications.",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787729/freepik_photo-a-white-counter-with-a-blue-and-red-logo-multiple-screens-and-chairs-in-the-background-inside-a-control-room_0001_ztdcak.png",
+  },
+  {
+    title: "Sungrow Solar PV Inverter",
+    description: "High-efficiency Sungrow Solar PV inverters providing reliable and sustainable solar energy conversion and seamless grid integration.",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787619/freepik_photo-solar-panels-and-wind-turbines-in-the-foreground-with-a-city-skyline-and-green-trees-in-the-background-under-a-blue-sky-with-clouds_0001_fnw6xt.png",
   },
 ];
 
@@ -105,28 +120,54 @@ export interface ProjectItem {
 export const projects: ProjectItem[] = [
   {
     title: "Powering the<br/>North-West - NIC<br/>CIRCLE BSP",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771844853/high-power-electricity-poles-technology-background-energy-supply-distribution-energy-high-voltage-supply-concept_j7gdnu.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774787325/shutterstock_2228811757_qlupld.jpg",
     alt: "Substations",
   },
   {
     title: "Enhancing Grid<br/>Stability - AFIF BSP",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771844855/electricity-pylons-city-night-with-reflection-ecological-electrical-power-plants-all-one-frame-ai-generated_wvihj2.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774786711/shutterstock_2600820821_dbszpk.jpg",
     alt: "Transmission",
   },
   {
     title: "A Pilot SAS<br/>Implementation<br/>FRUSYAH (FRS)",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771844863/smart-grid-system-powering-urban-landscape-dusk_ikljq1.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774786956/shutteerrrr_f9ror5.png",
     alt: "City",
   },
   {
     title: "Powering ROSHN<br/>AL-AROUS Substation",
-    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1771844863/electricity-transmission-towers-with-orange-glowing-wires-against-night-sky_awuhgg.png",
+    image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774786962/shutterstock_2423043069_whludf.png",
     alt: "Industry",
   },
 ];
 
-export const locationMaps: Record<string, string> = {
-  "head-office": "https://i.postimg.cc/qBL9hG2y/Layer_0_(2).jpg",
-  "location-01": "https://i.postimg.cc/xjRWJPKD/Layer_0_(1).jpg",
-  "location-02": "https://i.postimg.cc/G3QZ8jkC/Layer_0.jpg",
+export interface LocationDetail {
+  title: string;
+  address1: string;
+  address2: string;
+  email: string;
+  pinPos: string;
+}
+
+export const locationDetails: Record<string, LocationDetail> = {
+  'head-office': {
+    title: 'Head Office',
+    address1: '2nd Industrial City-Riyadh, KSA',
+    address2: 'P.O Box: 355950, 11383-Riyadh',
+    email: 'info@sep-engineering.com',
+    pinPos: 'top-[45%] left-[55%]',
+  },
+  'location-01': {
+    title: 'Al Gihaz Holding – Jeddah branch',
+    address1: 'Prince Mohammed Bin Abdulaziz',
+    address2: 'St, Al-Andalus, Jeddah 23326, Saudi Arabia',
+    email: 'info@sep-engineering.com',
+    pinPos: 'top-[55%] left-[35%]',
+  },
+  'location-02': {
+    title: 'Location 02',
+    address1: 'King Fahd Road, Olaya District',
+    address2: 'Riyadh, KSA',
+    email: 'info@sep-engineering.com',
+    pinPos: 'top-[38%] left-[58%]',
+  },
 };
