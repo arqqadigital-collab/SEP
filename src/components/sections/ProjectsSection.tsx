@@ -2,7 +2,7 @@ import React from "react";
 import { projects } from "@/data/content";
 
 const ProjectsSection: React.FC = () => (
-  <section className="py-24 bg-white relative z-10">
+  <section id="projects" className="py-24 bg-white relative z-10">
     <div className="text-center mb-12 px-6">
       <h2 className="text-3xl font-bold mb-4 text-[#0c468b]">Our Projects</h2>
       <p className="text-gray-700 max-w-2xl mx-auto">
@@ -34,7 +34,7 @@ const ProjectsSection: React.FC = () => (
 
     <div className="flex justify-center mt-12">
       <button className="px-8 py-3 border border-[#0c468b] text-[#0c468b] hover:bg-[#0c468b] hover:text-white transition-colors rounded-lg text-sm font-semibold tracking-wider uppercase flex items-center gap-2">
-        View All
+        View All Projects
       </button>
     </div>
   </section>

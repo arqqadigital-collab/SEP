@@ -24,7 +24,10 @@ const HeroSection: React.FC = () => (
         Learn More
       </button>
 
-      <div className="animate-bounce cursor-pointer flex justify-center mt-8">
+      <div
+        className="animate-bounce cursor-pointer flex justify-center mt-8"
+        onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+      >
         <ChevronDown size={32} className="text-white" />
       </div>
     </div>

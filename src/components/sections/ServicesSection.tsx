@@ -64,13 +64,17 @@ const ServicesSection: React.FC = () => {
             </div>
           </div>
 
+          {/* Services Image Container - Stacked for instant switching */}
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 group-hover:border-white/30 transition-colors duration-300">
-              <img
-                src={activeService.image}
-                alt={activeService.title}
-                className={`w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105 ${isFading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
-              />
+            <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 group-hover:border-white/30 transition-colors duration-300 bg-[#082d5a]">
+              {services.map((service, idx) => (
+                <img
+                  key={`service-img-${idx}`}
+                  src={service.image}
+                  alt={service.title}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105 ${idx === currentSlide && !isFading ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'}`}
+                />
+              ))}
             </div>
           </div>
         </div>

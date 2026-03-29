@@ -68,16 +68,19 @@ const ProductsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Center Image */}
-        <div className="relative flex justify-center w-full">
-          <img
-            src={activeProduct.image}
-            alt={activeProduct.title}
-            className={`relative z-10 rounded-xl shadow-2xl w-full aspect-[4/3] object-cover object-center border border-gray-200 transition-all duration-300 ease-in-out ${isFading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
-          />
+        {/* Center Image Container - Stacked for instant switching */}
+        <div className="relative flex justify-center w-full aspect-[4/3] rounded-xl shadow-2xl border border-[#0c468b] overflow-hidden bg-white">
+          {products.map((product, idx) => (
+            <img
+              key={`product-img-${idx}`}
+              src={product.image}
+              alt={product.title}
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-300 ease-in-out ${idx === currentSlide && !isFading ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'}`}
+            />
+          ))}
         </div>
 
-        {/* Next Product Preview */}
+        {/* Next Product Preview (Faded) */}
         <div className={`hidden md:block opacity-50 space-y-2 pl-8 border-l border-gray-300 transition-all duration-300 ease-in-out ${isFading ? 'opacity-0 translate-x-4' : 'opacity-100 translate-x-0'}`}>
           <h3 className="text-xl font-semibold text-[#0c468b]">{nextProduct.title}</h3>
           <p className="text-sm line-clamp-2 text-gray-700">{nextProduct.description}</p>
