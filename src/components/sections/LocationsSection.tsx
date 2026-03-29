@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MapPin } from "lucide-react";
+import { locationDetails } from "@/data/content";
 
 const locationTabs = [
   { id: "head-office", label: "Head Office" },
@@ -7,43 +8,22 @@ const locationTabs = [
   { id: "location-02", label: "Location 02" },
 ] as const;
 
-const locationDetails: Record<string, {
-  title: string;
-  address1: string;
-  address2: string;
-  email: string;
-  pinPos: string;
-}> = {
-  'head-office': {
-    title: 'Head Office',
-    address1: '2nd Industrial City-Riyadh, KSA',
-    address2: 'P.O Box: 355950, 11383-Riyadh',
-    email: 'info@sep-engineering.com',
-    pinPos: 'top-[45%] left-[55%]'
-  },
-  'location-01': {
-    title: 'Al Gihaz Holding – Jeddah branch',
-    address1: 'Prince Mohammed Bin Abdulaziz',
-    address2: 'St, Al-Andalus, Jeddah 23326, Saudi Arabia',
-    email: 'info@sep-engineering.com',
-    pinPos: 'top-[55%] left-[35%]'
-  },
-  'location-02': {
-    title: 'Location 02',
-    address1: 'King Fahd Road, Olaya District',
-    address2: 'Riyadh, KSA',
-    email: 'info@sep-engineering.com',
-    pinPos: 'top-[38%] left-[58%]'
-  }
-};
-
 const LocationsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState("head-office");
   const activeLoc = locationDetails[activeTab];
 
   return (
     <section className="py-24 relative overflow-hidden bg-[#0c468b] z-10">
-      <div className="text-center mb-12 px-6">
+      {/* Section Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://res.cloudinary.com/dcjufshrh/image/upload/v1774788386/BG_a79yje.png"
+          alt="Locations Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="text-center mb-12 px-6 relative z-10">
         <h2 className="text-3xl font-bold mb-4 text-white">Our Locations</h2>
         <p className="text-blue-100 max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -65,20 +45,15 @@ const LocationsSection: React.FC = () => {
         </div>
 
         {/* Map Area */}
-        <div className="relative w-full h-[400px] md:h-[500px] max-w-5xl mx-auto rounded-3xl bg-[#0c468b] overflow-hidden shadow-2xl border border-white/10 flex items-center justify-center">
-          <img
-            src="https://res.cloudinary.com/dcjufshrh/image/upload/v1773052378/maapp_dtmiry.png"
-            alt="Locations Map"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          {/* Moving Pin */}
+        <div className="relative w-full h-[400px] md:h-[500px] max-w-5xl mx-auto flex items-center justify-center">
+          {/* Moving Image Location Pin */}
           <div className={`absolute transition-all duration-700 ease-in-out z-30 ${activeLoc.pinPos}`}>
-            <div className="relative flex items-center justify-center drop-shadow-2xl text-white transform -translate-x-1/2 -translate-y-full">
-              <svg width="40" height="52" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg" className="relative z-10 transition-transform duration-300 hover:scale-110">
-                <path d="M12 0C5.373 0 0 5.373 0 12C0 21 12 34 12 34C12 34 24 21 24 12C24 5.373 18.627 0 12 0Z" fill="currentColor"/>
-                <circle cx="12" cy="12" r="4.5" fill="#0c468b"/>
-              </svg>
+            <div className="relative flex items-center justify-center drop-shadow-2xl transform -translate-x-1/2 -translate-y-full">
+              <img
+                src="https://res.cloudinary.com/dcjufshrh/image/upload/v1774788574/pin_uwvhse.png"
+                alt="Location Pin"
+                className="w-16 md:w-20 h-auto transition-transform duration-300 hover:scale-110"
+              />
             </div>
           </div>
 
