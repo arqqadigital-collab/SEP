@@ -10,7 +10,7 @@ const ProjectsSection: React.FC = () => (
       </p>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-[600px] w-full cursor-pointer">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 h-[600px] w-full cursor-pointer border-y border-gray-200">
       {projects.map((project, index) => (
         <div
           key={index}

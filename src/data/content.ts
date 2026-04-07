@@ -162,7 +162,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     pinPos: 'top-[45%] left-[55%]',
   },
   'location-01': {
-    title: 'Al Gihaz Holding – Jeddah branch',
+    title: 'Jeddah Office',
     address1: 'Prince Mohammed Bin Abdulaziz',
     address2: 'St, Al-Andalus, Jeddah 23326, Saudi Arabia',
     email: 'info@sep-engineering.com',

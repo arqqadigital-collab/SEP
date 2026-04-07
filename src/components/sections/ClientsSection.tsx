@@ -4,7 +4,7 @@ import { clientLogos } from "@/data/content";
 const ClientsSection: React.FC = () => (
   <section className="py-24 overflow-hidden bg-white relative z-10">
     <div className="text-center mb-12 px-6">
-      <h2 className="text-3xl font-bold text-[#0c468b]">Our Clients</h2>
+      <h2 className="text-3xl font-bold text-[#0c468b]">Our Partners</h2>
     </div>
 
     <div className="relative w-full max-w-7xl mx-auto flex items-center">
