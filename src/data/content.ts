@@ -8,6 +8,19 @@ export const clientLogos = [
   "https://i.postimg.cc/d0VdPV3z/Whats_App_Image_2026_02_24_at_2_47_49_PM.jpg",
 ];
 
+export const customerLogos = [
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562676/Aramco-logo_rachgr.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562628/2083.SR-a8605429_rlyuv8.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562700/images_2_shlfev.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562691/images_1_u0zcvc.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562767/images_bteiiu.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562776/neom-logo-png-saudi-arabia-PNG-Transparent-Images_iknl5q.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562776/WTTCO-logo_v8fkbg.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562776/sabic-saudi-arabia-logo-plastic-company-saudi_u01bwu.jpg",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562776/Saudi_Energy_Logo.svg_bccwyk.png",
+  "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775562777/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%B4%D8%B1%D9%83%D8%A9_%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A92_iuctg9.jpg",
+];
+
 export interface StatItem {
   end: number;
   suffix: string;
@@ -138,6 +151,11 @@ export const projects: ProjectItem[] = [
     image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774786962/shutterstock_2423043069_whludf.png",
     alt: "Industry",
   },
+  {
+    title: "Oil & Gas<br/>Case Studies",
+    image: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775559281/Screen_Shot_2026-04-07_at_12.54.26_PM_ukblcm.png",
+    alt: "Refinery Substation",
+  },
 ];
 
 export interface LocationDetail {
@@ -157,7 +175,7 @@ export const locationDetails: Record<string, LocationDetail> = {
     pinPos: 'top-[45%] left-[55%]',
   },
   'location-01': {
-    title: 'Al Gihaz Holding – Jeddah branch',
+    title: 'Jeddah Office',
     address1: 'Prince Mohammed Bin Abdulaziz',
     address2: 'St, Al-Andalus, Jeddah 23326, Saudi Arabia',
     email: 'info@sep-engineering.com',
