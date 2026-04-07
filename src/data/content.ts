@@ -138,6 +138,11 @@ export const projects: ProjectItem[] = [
     image: "https://res.cloudinary.com/dcjufshrh/image/upload/v1774786962/shutterstock_2423043069_whludf.png",
     alt: "Industry",
   },
+  {
+    title: "Oil & Gas<br/>Case Studies",
+    image: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775559281/Screen_Shot_2026-04-07_at_12.54.26_PM_ukblcm.png",
+    alt: "Refinery Substation",
+  },
 ];
 
 export interface LocationDetail {
